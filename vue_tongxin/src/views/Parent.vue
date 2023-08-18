@@ -8,6 +8,8 @@
 
   <Child :msg="message" @dadClick="dadjieshou" />
   <Child1 ref="rte" />
+
+  
 </template>
 
 <script setup>
