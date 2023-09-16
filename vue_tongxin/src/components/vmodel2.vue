@@ -13,7 +13,8 @@ const props = defineProps({
   msg2: String
 })
 
-const emit = defineEmits(['update:msg1', 'update:msg2'])
+const emit = defineEmits(['update:msg1', 'update:msg2']) 
+
 
 function changeMsg1() {
   emit('update:msg1', '鲨鱼辣椒')

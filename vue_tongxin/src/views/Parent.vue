@@ -5,31 +5,28 @@
     <button @click="callChild1">调用child1子组件方法ref/expose</button>
     <p>拿到child1子组件数据 ：{{ refChild1 }}</p>
   </div>
-
+  <!-- props传值 -->
   <Child :msg="message" @dadClick="dadjieshou" />
+  <!-- ref/expose -->
   <Child1 ref="rte" />
-
-  
 </template>
 
 <script setup>
 import { ref, reactive } from "vue";
 import Child from "@/components/Child.vue";
 import Child1 from "@/components/Child1.vue";
-let message = "nihao";
+let message = "父组件props传值";
 
 let ctod = reactive({
   name: "父亲",
   age: 50,
 });
 const dadjieshou = (data) => {
-  //   console.log(data);
-  //   console.log(ctod);
+  console.log(data);
   console.log(ctod);
   ctod.name = data.name;
   ctod.age = data.age;
 };
-
 
 //child1 ref expose
 const refChild1 = ref("父组件初始数据");
